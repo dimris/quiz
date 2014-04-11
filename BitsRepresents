@@ -1,0 +1,34 @@
+public class BitsRepresents {
+	public static void main(String args[])
+    {
+        int a;
+
+        a = Integer.parseInt(args[0]);         //taking command line input
+        
+        System.out.println("\n" + getBinarySum(a));
+        
+        
+    }
+	
+	static int getBinarySum(int number)
+	{
+        int i = 0;
+        int b[] = new int[10];
+
+        while (number != 0)
+        {
+            i++;
+            b[i] = number % 2;
+            number = number / 2;
+        }
+        
+        int sum = 0;
+        
+        for (int j = i; j > 0; j--)
+        {
+            sum += b[j];
+        }
+
+        return sum;
+	}
+}
